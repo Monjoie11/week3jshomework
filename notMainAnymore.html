@@ -87,7 +87,7 @@
         }
 
         if((length + offset) > someStr.length){
-            alert("you're off the map, my friend. You're trying to extend beyond the length of your screen")
+            alert("you're off the map, my friend. You're trying to extend beyond the length of your string")
         }
 
         let newStr = "";
@@ -102,6 +102,35 @@
     }
      
     substring("mississippi", 5, 2);
+
+//6 Define function: isEven(someNum)
+//Return true if even, false if odd.
+//Do not use % operator.
+
+function isEven(someNum){
+   if(Number.isInteger(someNum/2)){
+       return true;
+   } else {
+       return false;
+   }
+}
+
+//7 Define function isPalindrome(someStr)
+//Return true if someStr is a palindrome, otherwise return false
+
+function isPalindrome(someStr){
+    someStr = someStr.split("");
+    for (let i = 0, j = someStr.length-1; i < j; i++, j-- ){
+        if(someStr[i] == someStr[j]){
+            continue;
+        } else {
+            return false;
+        }
+    }
+   return true;
+}
+
+
 
 
 
