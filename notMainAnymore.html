@@ -71,102 +71,145 @@
 
         factorial(7);
 
-    //5
+        //5
 
-    function substring(someStr, length, offset){
-        if(offset > someStr.length){
-            alert("offset grater than array length")
-        }
-
-        if(length > someStr.length){
-            alert("hombre, no puedes crear a un subhilo mas grande que el hilo")
-        }
-
-        if(length < 0 || offset < 0){
-           alert("you can't enter a negative number for length and/or offset")
-        }
-
-        if((length + offset) > someStr.length){
-            alert("you're off the map, my friend. You're trying to extend beyond the length of your string")
-        }
-
-        let newStr = "";
-
-        someStr = someStr.split("");
-
-        for(let i = offset; i < (offset + length); i++){
-            newStr += someStr[i];
-        }
-
-        return newStr;
-    }
-     
-    substring("mississippi", 5, 2);
-
-//6 Define function: isEven(someNum)
-//Return true if even, false if odd.
-//Do not use % operator.
-
-function isEven(someNum){
-   if(Number.isInteger(someNum/2)){
-       return true;
-   } else {
-       return false;
-   }
-}
-
-//7 Define function isPalindrome(someStr)
-//Return true if someStr is a palindrome, otherwise return false
-
-function isPalindrome(someStr){
-    someStr = someStr.split("");
-    for (let i = 0, j = someStr.length-1; i < j; i++, j-- ){
-        if(someStr[i] == someStr[j]){
-            continue;
-        } else {
-            return false;
-        }
-    }
-   return true;
-}
-
-//8 shape is a String and is either "Square", "Triangle", "Diamond".
-
-
-
-function printShape(shape, height, character){
-    let target = "";
-    let counter = height;
-    switch(shape){
-        case "Square":
-            for(let i = 0; i < height; i++){
-                target += character;
+        function substring(someStr, length, offset) {
+            if (offset > someStr.length) {
+                alert("offset grater than array length")
             }
-            target += "\n"
-            shape = target.repeat(height);
-            console.log(shape);
-            break;
-        case "Triangle":
-            do{
-        for(let i = 0; i < height; i++){
-            if(counter <= height){
-                target += character.repeat(i+1);
+
+            if (length > someStr.length) {
+                alert("hombre, no puedes crear a un subhilo mas grande que el hilo")
+            }
+
+            if (length < 0 || offset < 0) {
+                alert("you can't enter a negative number for length and/or offset")
+            }
+
+            if ((length + offset) > someStr.length) {
+                alert("you're off the map, my friend. You're trying to extend beyond the length of your string")
+            }
+
+            let newStr = "";
+
+            someStr = someStr.split("");
+
+            for (let i = offset; i < (offset + length); i++) {
+                newStr += someStr[i];
+            }
+
+            return newStr;
+        }
+
+        substring("mississippi", 5, 2);
+
+        //6 Define function: isEven(someNum)
+        //Return true if even, false if odd.
+        //Do not use % operator.
+
+        function isEven(someNum) {
+            if (Number.isInteger(someNum / 2)) {
+                return true;
             } else {
-                target += " ".repeat();
+                return false;
             }
-               target += (" ".repeat(height - i - 1) + "\n");
-               counter--;
-            }
-        }while(counter > 0);
-        console.log(target);
-            break;
-        case "Diamond": 
-        let middle = Math.round(height/2);
-        for(let i = 0; i < height; i++){
+        }
 
-        }       
-    }
-}
+        //7 Define function isPalindrome(someStr)
+        //Return true if someStr is a palindrome, otherwise return false
+
+        function isPalindrome(someStr) {
+            someStr = someStr.split("");
+            for (let i = 0, j = someStr.length - 1; i < j; i++ , j--) {
+                if (someStr[i] == someStr[j]) {
+                    continue;
+                } else {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        //8 shape is a String and is either "Square", "Triangle", "Diamond".
+
+
+
+        function printShape(shape, height, character) {
+            let target = "";
+            let counter = height;
+            switch (shape) {
+                case "Square":
+                    for (let i = 0; i < height; i++) {
+                        target += character;
+                    }
+                    target += "\n"
+                    shape = target.repeat(height);
+                    console.log(shape);
+                    break;
+                case "Triangle":
+                    do {
+                        for (let i = 0; i < height; i++) {
+                            if (counter <= height) {
+                                target += character.repeat(i + 1);
+                            } else {
+                                target += " ".repeat();
+                            }
+                            target += (" ".repeat(height - i - 1) + "\n");
+                            counter--;
+                        }
+                    } while (counter > 0);
+                    console.log(target);
+                    break;
+                case "Diamond":
+                    let middle = Math.round(height / 2);
+                    for (let i = 0; i < height; i++) {
+
+                    }
+            }
+        }
+
+        //9 function traverseObject(someObj)
+        function traverseObject(someObj) {
+            for (let property in someObj) {
+                let value = someObj[property]
+                console.log(value, property)
+            }
+        }
+
+        10.// Delete Element
+
+
+        function deleteElement(someArr) {
+            console.log(someArr.length);
+            delete someArr[2];
+            console.log(someArr.length);
+        }
+
+        //11 Splice element
+
+        function spliceElement(someArr) {
+            console.log(someArr.length);
+            someArr.splice(2, 1);
+            console.log(someArr.length);
+        }
+
+        //12 
+        class Person{
+
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+        }
+
+        //13 
+        function getPerson(name, age){
+           let person = {personName: name, personAge: age};
+           return person;
+        }
+    
+        
 
 
 
