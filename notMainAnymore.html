@@ -130,6 +130,43 @@ function isPalindrome(someStr){
    return true;
 }
 
+//8 shape is a String and is either "Square", "Triangle", "Diamond".
+
+
+
+function printShape(shape, height, character){
+    let target = "";
+    let counter = height;
+    switch(shape){
+        case "Square":
+            for(let i = 0; i < height; i++){
+                target += character;
+            }
+            target += "\n"
+            shape = target.repeat(height);
+            console.log(shape);
+            break;
+        case "Triangle":
+            do{
+        for(let i = 0; i < height; i++){
+            if(counter <= height){
+                target += character.repeat(i+1);
+            } else {
+                target += " ".repeat();
+            }
+               target += (" ".repeat(height - i - 1) + "\n");
+               counter--;
+            }
+        }while(counter > 0);
+        console.log(target);
+            break;
+        case "Diamond": 
+        let middle = Math.round(height/2);
+        for(let i = 0; i < height; i++){
+
+        }       
+    }
+}
 
 
 
