@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sample HTML</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        //1
+
+        function fibonacci(n) {
+            let a = 0;
+            let b = 1;
+            let fibo = 1;
+            for (let i = 2; i <= n; i++) {
+                fibo = a + b;
+                a = b;
+                b = fibo;
+            }
+            return fibo;
+        };
+
+        fibonacci(8);
+
+        //2
+
+        function bubbleSort(numArray) {
+            let temp;
+            let counter = 0;
+            do {
+                counter = 0;
+                for (let i = 0; i < numArray.length; i++) {
+                    if (numArray[i] > numArray[i + 1]) {
+                        temp = numArray[i];
+                        numArray[i] = numArray[i + 1];
+                        numArray[i + 1] = temp;
+                        counter++;
+                    }
+                }
+            } while (counter !== 0);
+            return numArray;
+        }
+
+        bubbleSort([5, 7, 8, 55, 6, 1, 99]);
+
+        //3 Reverse and return the String.
+        function reverseStr(someStr) {
+            return someStr.split("").reverse().join("");
+        }
+
+        reverseStr("doggnidoc");
+
+        //4 Define function: factorial(someNum)
+        function factorial(someNum) {
+            if (someNum < 0) {
+                return "enter a positve number";
+            } else if (someNum === 0) {
+                return 1;
+            } else {
+                return someNum * (someNum * factorial(someNum - 1));
+            }
+        }
+
+        factorial(7);
+
+    //5
+
+    function substring(someStr, length, offset){
+        if(offset > someStr.length){
+            alert("offset grater than array length")
+        }
+
+        if(length > someStr.length){
+            alert("hombre, no puedes crear a un subhilo mas grande que el hilo")
+        }
+
+        if(length < 0 || offset < 0){
+           alert("you can't enter a negative number for length and/or offset")
+        }
+
+        if((length + offset) > someStr.length){
+            alert("you're off the map, my friend. You're trying to extend beyond the length of your screen")
+        }
+
+        let newStr = "";
+
+        someStr = someStr.split("");
+
+        for(let i = offset; i < (offset + length); i++){
+            newStr += someStr[i];
+        }
+
+        return newStr;
+    }
+     
+    substring("mississippi", 5, 2);
+
+
+
+    </script>
+</body>
+
+</html>
