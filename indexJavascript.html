@@ -203,6 +203,21 @@ Print the element that has the attribute. */
         }
     }
 
+    //7
+    /*
+Skills Event
+NOTE: Write unobtrusive Javascript
+When user selects a skill, create an alert with a message similar to:
+	"Are you sure CSS is one of your skills?"
+NOTE: no alert should appear when user deselects a skill    */
+
+    let skillz = document.querySelector('[name="skills"]')
+    skillz.addEventListener("change", smackTalk)
+
+    function smackTalk(){
+        alert("are you sure you know " + skillz.selectedOptions[0].textContent)
+    }
+
     </script>
 
 </body>
