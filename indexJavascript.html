@@ -218,6 +218,37 @@ NOTE: no alert should appear when user deselects a skill    */
         alert("are you sure you know " + skillz.selectedOptions[0].textContent)
     }
 
+    //8
+    /*
+Favorite Color Event
+NOTE: Write unobtrusive Javascript
+NOTE: This is regarding the favoriteColor radio buttons.
+When a user selects a color, create an alert with a message similar to:
+	"So you like green more than blue now?"
+In this example, green is the new value and blue is the old value.
+Make the background color (of all favoriteColor radio buttons) the newly selected favoriteColor
+    */
+
+    let colorSelector = document.querySelector('[name="colors"]')
+    let oldColor = colorSelector.selectedOptions[0].textContent
+    colorSelector.addEventListener("change", colorSmack)
+
+    function colorSmack(){
+        let newColor = colorSelector.selectedOptions[0].textContent
+        alert("soooo, you like " + oldColor + " more than " + newColor + " now?")
+        let colorButtons = document.querySelectorAll('[name="favoriteColor"]')
+        colorButtons.getAttribute('value') = newColor
+    }
+
+    //9
+    /*
+    When user hovers over an employees name:
+	Hide the name if shown.
+	Show the name if hidden.
+    */
+
+    let nameArray = document.getElementsByName("empName")
+
     </script>
 
 </body>
