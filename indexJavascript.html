@@ -187,17 +187,20 @@ Print the element that has the attribute. */
     If values cannot be added, put "Cannot add" in the <span> element */ 
         let num1 = document.getElementById('num1')
         let num2 = document.getElementById('num2')
+        num1.addEventListener("change", sumEvent)
+        num2.addEventListener("change", sumEvent)
+
+    function sumEvent(){
         let sum = document.getElementById('sum')
-        num1.addEventListener("change", parse1)
-        num2.addEventListener("change", parse2)
-
-
-    function parse1(){
-
-    } 
-    
-    function parse2(){
-
+        let value1 = Number.parseInt(num1.value)
+        let value2 = Number.parseInt(num2.value)
+        if(value1 == NaN){
+            sum.textContent = "Cannot add";
+        } else if(value2 == NaN){
+           sum.textContent = "Cannot add";
+        } else {
+            sum.textContent = value2 + value1;
+        }
     }
 
     </script>
